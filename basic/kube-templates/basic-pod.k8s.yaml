@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basic-pod
+  labels:
+    created-by: robotmaker76
+    app: learn-the-kube
+spec:
+  containers:
+  - name: k8s-basic
+    image: jerepondumie/k8s-basic
