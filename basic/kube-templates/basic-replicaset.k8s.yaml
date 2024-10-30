@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: basic-replica-set
+  name: basic-replicaset
   labels:
     created-by: robotmaker76
     app: learn-the-kube
@@ -14,7 +14,7 @@ spec:
     metadata:
       labels:
         app: learn-the-kube
-        name: basic-replica-set-pod
+        name: basic-replicaset-pod
     spec:
       containers:
       - name: k8s-basic
