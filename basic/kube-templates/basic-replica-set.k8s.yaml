@@ -6,7 +6,7 @@ metadata:
     created-by: robotmaker76
     app: learn-the-kube
 spec:
-  replicas: 4
+  replicas: 6
   selector:
     matchLabels:
       app: learn-the-kube
