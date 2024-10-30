@@ -10,16 +10,11 @@ spec:
   selector:
     matchLabels:
       app: learn-the-kube
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-           - key: kubernetes.io/hostname
-             operator: In
-             values:
-             - kube-slave-1
-             - kube-slave-2
-  containers:
-  - name: k8s-basic
-    image: jerepondumie/k8s-basic
+  template:
+    metadata:
+      labels:
+        app: learn-the-kube
+    spec:
+      containers:
+      - name: k8s-basic
+        image: jerepondumie/k8s-basic
