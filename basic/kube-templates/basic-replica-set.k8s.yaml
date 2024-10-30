@@ -1,11 +1,15 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: ReplicaSet
 metadata:
-  name: basic-pod
+  name: basic-replica-set
   labels:
     created-by: robotmaker76
     app: learn-the-kube
 spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: learn-the-kube
   affinity:
     nodeAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
