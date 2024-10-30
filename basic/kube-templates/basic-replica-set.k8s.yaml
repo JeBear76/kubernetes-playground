@@ -6,7 +6,7 @@ metadata:
     created-by: robotmaker76
     app: learn-the-kube
 spec:
-  replicas: 6
+  replicas: 12
   selector:
     matchLabels:
       app: learn-the-kube
@@ -14,6 +14,7 @@ spec:
     metadata:
       labels:
         app: learn-the-kube
+        name: basic-replica-set-pod
     spec:
       containers:
       - name: k8s-basic
