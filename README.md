@@ -23,3 +23,12 @@ kubernetes yaml files are created in each container folder under _kube-templates
 A simple python site to practice node affinity, opening ports and other 'simple' kubernetes features.
 
 
+## MySQL
+A MySQL server setup.  
+Here, I'm learning how to setup persistent volumes and claims.  
+There's also a *secret* to store the root password for the MySQL server.  
+
+The password is in base64. Yes, it's totally not secure, so don't do that, but...  
+a) I'm not using ThisIsAStupidPassword for anything else.  
+b) It's for a cluster that is accessible only on my home network.  
+c) I shut it down when I don't play with it.  
