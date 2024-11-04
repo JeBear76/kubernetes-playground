@@ -38,7 +38,6 @@ spec:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
-                - kube-slave-1
                 - kube-slave-2
 ---
 apiVersion: v1
