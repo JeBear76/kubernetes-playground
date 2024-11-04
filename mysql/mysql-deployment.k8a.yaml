@@ -25,11 +25,21 @@ spec:
               key: password
         volumeMounts:
         - name: mysql-storage
-          mountPath: /var/lib/mysql
+          mountPath: /var/lib/mysql          
       volumes:
       - name: mysql-storage
         persistentVolumeClaim:
           claimName: mysql-persistent-volume-claim
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - slave-1
+                - slave-2
 ---
 apiVersion: v1
 kind: Service
@@ -43,4 +53,3 @@ spec:
       port: 3306
       targetPort: 3306
   type: NodePort
-  
