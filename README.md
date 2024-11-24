@@ -32,3 +32,13 @@ The password is in base64. Yes, it's totally not secure, so don't do that, but..
 a) I'm not using ThisIsAStupidPassword for anything else.  
 b) It's for a cluster that is accessible only on my home network.  
 c) I shut it down when I don't play with it.  
+
+## Bas64 Encode and Decode
+encode
+```
+base64 <<< SomePassword
+```
+decode
+```
+base64 -d <<< U29tZVBhc3N3b3JkCg==
+```
