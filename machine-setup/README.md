@@ -25,15 +25,7 @@ Then
 sudo systemctl start wait-for-ping.service
 sudo systemctl enable wait-for-ping.service
 ```
-## credentials
-```
-sudo nano /home/pi/.smbcredentials
-```
-Add
-```
-username=pi
-password=<password>
-```
+
 ## fstab
 ```
 mkdir /home/pi/data
@@ -42,7 +34,8 @@ sudo nano /etc/fstab
 Add  
 (Replace <IP> with the IP Address of the samba server)  
 (Replace <Share> with the share name)
+(Replace <password> with the password for pi)
 
 ```
-//<IP>/<Share> /home/pi/data   cifs    credentials=/home/pi/.smbcredentials,x-systemd.after=wait-for-ping.service      0       0
+//<IP>/<Share> /home/pi/data   cifs     username=pi,password=<password>,iocharset=utf8,file_mode=0777,dir_mode=0777,x-systemd.after=wait-for-ping.service      0       0
 ```
